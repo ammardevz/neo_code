@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    font-family: "Playwrite GB S", cursive;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo p {
+    margin-top: 10px;
+    opacity: 0.75;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin-top: 25px;
+}
+
+nav ul a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    position: relative;
+}
+
+nav ul a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(90deg, rgb(9, 9, 202), rgb(7, 222, 222));
+    transition: width 0.3s ease;
+}
+
+nav ul a:hover::after {
+    width: 100%;
+}
+
+/* Button Styles */
+button {
+    font-size: 1.3rem;
+    padding: 15px 25px;
+    background: linear-gradient(90deg, rgb(9, 9, 202), rgb(7, 222, 222));
+    color: white;
+    border: none;
+    border-radius: 15px;
+    background-size: 200% 100%;
+    background-position: 0% 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    background-position: 100% 50%;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Playwrite GB S';
+    background: linear-gradient(90deg, rgb(9, 9, 202), rgb(7, 222, 222));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-section p {
+    margin-bottom: 2rem;
+    opacity: 0.8;
+    max-width: 800px;
+}
+
+/* Features Section */
+.features {
+    background-color: rgb(248, 249, 250);
+    padding: 50px 5%;
+    text-align: center;
+}
+
+.features h2 {
+    margin-bottom: 2rem;
+    color: rgb(9, 9, 202);
+}
+
+.features ul {
+    max-width: 800px;
+    margin: 0 auto;
+    list-style-position: inside;
+}
+
+.features li {
+    margin: 1rem 0;
+    text-align: left;
+    padding-left: calc(10px * var(--i, 1));
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.features li:hover {
+    transform: translateX(10px);
+}
+
+/* Courses Section */
+.courses {
+    padding: 50px 5%;
+    text-align: center;
+}
+
+.courses h2 {
+    margin-bottom: 2rem;
+    color: rgb(9, 9, 202);
+}
+
+.courses-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.course-card {
+    width: 250px;
+    height: 250px;
+    perspective: 1000px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 0.8s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.card-front {
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+}
+
+.card-back {
+    background: linear-gradient(90deg, rgba(9, 9, 202, 0.75), rgba(7, 222, 222, 0.75));
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.course-card:hover .card-front {
+    transform: rotateY(180deg);
+}
+
+.course-card:hover .card-back {
+    transform: rotateY(360deg);
+}
+
+.course-card i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, rgb(9, 9, 202), rgb(7, 222, 222));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.course-card h3 {
+    font-size: 1.5rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgb(248, 249, 250);
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.get-in-touch {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgb(248, 249, 250);
+    padding: 50px 100px;
+}
+
+.get-in-touch {
+    color: rgb(9, 9, 202);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.get-in-touch form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 50vw;
+}
+
+.get-in-touch label {
+    font-weight: bold;
+}
+
+.get-in-touch button {
+    align-self: center;
+    margin: 25px 0px;
+}
+
+.get-in-touch input[type="text"],
+.get-in-touch input[type="email"],
+.get-in-touch input[type="tel"] {
+    padding: 10px 25px;
+    border-radius: 8px;
+    border: 2.5px solid transparent;
+    background-image: linear-gradient(white, white), linear-gradient(90deg, rgb(9, 9, 202), rgb(7, 222, 222));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    text-align: start;
+    margin-bottom: 10px;
+    transition: border-width 0.1s ease;
+    outline: none;
+    width: 500px;
+}
+
+.get-in-touch input[type="text"]:focus,
+.get-in-touch input[type="email"]:focus,
+.get-in-touch input[type="tel"]:focus {
+    border-width: 4px;
+}
